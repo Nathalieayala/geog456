@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script src="myResult.js"></script>
+</head>
+<body>
+
+<h2>Food Environment Atlas</h2>
+
+<table id="mytable">
+  <tr>
+    <th>County</th>
+    <th>Direct Farm Sales 2012</th>
+    <th>Farmer Market 2018</th>
+    
+  
+</table>
+
+</body>
+<script>
+    var x = document.getElementById('mytable')
+    for (var i =0; i<myResult.length; i++ ) {
+        var newrow = document.createElement('tr');
+        var myNewCell1 = document.createElement('td');
+        var myNewCell2 = document.createElement('td');
+        var myNewCell3 = document.createElement('td');
+        myNewCell1.innerText = myResult[i].County;
+        myNewCell2.innerText = myResult[i].DIRSALES_FARMS12;
+        myNewCell3.innerText = myResult[i].FMRKTPTH18;
+
+        newrow.append(myNewCell1)
+        newrow.append(myNewCell2)
+        newrow.append(myNewCell3)
+        x.append(newrow)
+    }
+</script>
+</html>
+
